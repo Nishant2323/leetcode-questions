@@ -15,28 +15,25 @@
  */
 class Solution {
     public int countNodes(TreeNode root) {
-        if(root == null){
-            return 0;
-        }
-        int left_level = 1;
-        TreeNode l = root.left;
+        if(root==null)return 0;
+        int left_ex=1;
+        TreeNode l=root.left;
         while(l!=null){
-            l = l.left;
-            left_level++;
+            l=l.left;
+            left_ex=left_ex+1;
+            
         }
-        int right_level = 1;
-        TreeNode r = root.right;
+         int right_ex=1;
+        TreeNode r=root.right;
         while(r!=null){
-            r = r.right;
-            right_level++;
+            r=r.right;
+            right_ex++;
+            
         }
-        if(right_level == left_level){
-            return(int) Math.pow(2 , left_level) - 1;
+        if(left_ex==right_ex){
+             return (int)Math.pow(2 , left_ex)-1;
+            
         }
-
-
-        return 1+countNodes(root.left)+countNodes(root.right);
-
-        
+        return   1+countNodes(root.left)+countNodes(root.right);
     }
 }
