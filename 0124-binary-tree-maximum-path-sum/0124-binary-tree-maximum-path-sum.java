@@ -41,7 +41,8 @@
 
 
 
-
+// time complextcity = o(n);
+// space complexicty = o(1);
 
 
 class Solution {
